@@ -7,18 +7,18 @@ const { Spotify } = require("poru-spotify");
 const applemusic = new AppleMusic({ contryCode: "us" }); // I dont know why its "contryCode" instead of "countryCode", ask paras for it xD.
 const deezer = new Deezer();
 const spotify = new Spotify({
-    clientID: process.env.SPOTIFY_ID || " ",
-    clientSecret: process.env.SPOTIFY_SECRET || " ",
-    clients: [{ clientID: process.env.SPOTIFY_ID || " ", clientSecret: process.env.SPOTIFY_SECRET || " " }], // its seem this is a bug from the plugin, so if u dont add this, it will throw an error.
+    clientID: process.env.SPOTIFY_ID || "d3bba913b3cf4dc5855ef315c0ad3813",
+    clientSecret: process.env.SPOTIFY_SECRET || "85ee5beac71d4e6691ce2683716bb191",
+    clients: [{ clientID: process.env.SPOTIFY_ID || "d3bba913b3cf4dc5855ef315c0ad3813", clientSecret: process.env.SPOTIFY_SECRET || "85ee5beac71d4e6691ce2683716bb191" }], // its seem this is a bug from the plugin, so if u dont add this, it will throw an error.
 });
 
 module.exports = {
     // BOT DETAILS
     token: process.env.TOKEN || " ", // your bot token
-    prefix: process.env.PREFIX || "!", // your bot prefix "for owner message command"
-    color: process.env.EMBED_COLOR || " ", // your embeded hex color
-    owner: process.env.OWNER_ID || " ", // your bot Owners ID
-    guildLogs: process.env.GUILD_LOGS || " ", // your server join left logs Channel ID
+    prefix: process.env.PREFIX || "~", // your bot prefix "for owner message command"
+    color: process.env.EMBED_COLOR || "#fb11ad", // your embeded hex color
+    owner: process.env.OWNER_ID || "1219624638628233247", // your bot Owners ID
+    guildLogs: process.env.GUILD_LOGS || "1218516163479343125", // your server join left logs Channel ID
     leaveTimeout: process.env.LEAVE_TIMEOUT || "60000", // set leave TimeOut when bot was alone 1000 = 1sec
     disablePremium: parseBoolean(process.env.DISABLE_PREMIUM || "false"), // disable premium command
 
@@ -42,10 +42,10 @@ module.exports = {
     ],
 
     // LINK DETAILS
-    mongoUri: process.env.MONGO_URI || " ", // your MongoDB Url
-    supportUrl: process.env.SUPPORT_URL || "", // your Support Server Link
-    inviteUrl: process.env.INVITE_URL || " ", // your Bot Invite Link
-    imageUrl: process.env.IMAGE_URL || " ", // your Bot Banner Imange Link to use on "help" & "about" command
+    mongoUri: process.env.MONGO_URI || "mongodb+srv://az782l:u9tivl@cluster0.mmfongd.mongodb.net/?retryWrites=true&w=majority", // your MongoDB Url
+    supportUrl: process.env.SUPPORT_URL || "https://discord.com/invite/sbFJCnQzJz", // your Support Server Link
+    inviteUrl: process.env.INVITE_URL || "https://discord.com/invite/sbFJCnQzJz", // your Bot Invite Link
+    imageUrl: process.env.IMAGE_URL || "https://cdn.discordapp.com/attachments/1240230879427694676/1241398431772053554/d601713de8002b9be1d0c1d72b60c759.jpg?ex=664a0de2&is=6648bc62&hm=51e84fb5854d32fb7d8c3ed3831a80d8512268632091b6adc9fea7a135bce372&", // your Bot Banner Imange Link to use on "help" & "about" command
 };
 
 function parseBoolean(value) {
