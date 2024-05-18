@@ -31,10 +31,10 @@ module.exports = {
     },
     nodes: [
         {
-            name: process.env.NODE_NAME || "lavalink.ddns.net", // lavalink node name (anything you want)
+            name: process.env.NODE_NAME || "lavalink3.alfari.id", // lavalink node name (anything you want)
             host: process.env.NODE_HOST || "localhost", // lavalink host
-            port: parseInt(process.env.NODE_PORT || "2433"), //lavalink port
-            password: process.env.NODE_PASSWORD || "discord.gg/FqEQtEtUc9", //lavalink pass/auth
+            port: parseInt(process.env.NODE_PORT || "80"), //lavalink port
+            password: process.env.NODE_PASSWORD || "catfein", //lavalink pass/auth
             secure: parseBoolean(process.env.NODE_SECURE || "false"), //lavalink secure "true/false"
         },
     ],
