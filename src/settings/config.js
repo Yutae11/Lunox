@@ -1,10 +1,8 @@
 require("dotenv").config();
 const { customFilter } = require("poru");
-const { AppleMusic } = require("poru-applemusic");
 const { Deezer } = require("poru-deezer");
 const { Spotify } = require("poru-spotify");
 
-const applemusic = new AppleMusic({ contryCode: "us" }); // I dont know why its "contryCode" instead of "countryCode", ask paras for it xD.
 const deezer = new Deezer();
 const spotify = new Spotify({
     clientID: process.env.SPOTIFY_ID || "d3bba913b3cf4dc5855ef315c0ad3813",
