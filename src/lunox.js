@@ -34,21 +34,26 @@ class MainClient extends Client {
         this.premium = new Collection();
         this.dev = new Set();
 
-        this.poru = new Poru(this, this.config.nodes, this.config.poruOptions, {
-            send: (guildId, payload) => {
-                const guild = this.guilds.cache.get(guildId);
-                if (guild) guild.shard.send(payload);
-            },
+        // Initialize Poru with options and nodes
+        this.poru = new Poru(this, this.config.nodes, this.config.poruOptions);
+        
+        // Set up custom send method for Poru
+        this.poru.on('raw', async (payload) => {
+            const guild = client.guilds.cache.get(payload.d.guild_id);
+            if (guild) guild.shard.send(payload);
         });
 
         if (!this.token) this.token = this.config.token;
 
+        // Load all handlers
         ["AntiCrash", "Database", "Events", "Commands", "Slash", "Poru"].forEach((handler) => {
             require(`./handlers/${handler}`)(this);
         });
 
+        // Initialize ClusterClient
         this.cluster = new ClusterClient(this);
     }
+
     connect() {
         return super.login(this.token);
     }
