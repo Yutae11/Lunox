@@ -1,8 +1,10 @@
 require("dotenv").config();
 const { customFilter } = require("poru");
+const { AppleMusic } = require("poru-applemusic");
 const { Deezer } = require("poru-deezer");
 const { Spotify } = require("poru-spotify");
 
+const applemusic = new AppleMusic({ contryCode: "us" });
 const deezer = new Deezer();
 const spotify = new Spotify({
     clientID: process.env.SPOTIFY_ID || "d3bba913b3cf4dc5855ef315c0ad3813",
@@ -31,10 +33,10 @@ module.exports = {
     },
     nodes: [
         {
-            name: process.env.NODE_NAME || "lavalink3.alfari.id", // lavalink node name (anything you want)
+            name: process.env.NODE_NAME || "Lunox 01", // lavalink node name (anything you want)
             host: process.env.NODE_HOST || "localhost", // lavalink host
-            port: parseInt(process.env.NODE_PORT || "80"), //lavalink port
-            password: process.env.NODE_PASSWORD || "catfein", //lavalink pass/auth
+            port: parseInt(process.env.NODE_PORT || "2333"), //lavalink port
+            password: process.env.NODE_PASSWORD || "youshallnotpass", //lavalink pass/auth
             secure: parseBoolean(process.env.NODE_SECURE || "false"), //lavalink secure "true/false"
         },
     ],
