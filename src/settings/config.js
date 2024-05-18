@@ -25,7 +25,7 @@ module.exports = {
         customFilter,
         library: "discord.js", // This source made by using discord.js, so don't even try to change this thing :)
         defaultPlatform: process.env.DEFAULT_PLATFORM || " ", // recomended using "ytmsearch". You can change this to: "ytsearch" / "ytmsearch" / "scsearch". More Audio Source? Use Lavasrc plugin.
-        plugins: [applemusic, deezer, spotify], // Enable applemusic/deezer/spotify LINK to be readable by poru without using LavaSrc plugin.
+        plugins: [deezer, spotify], // Enable applemusic/deezer/spotify LINK to be readable by poru without using LavaSrc plugin.
         reconnectTries: Infinity, // total attemps to try if reconnect failed. you can change it to "Infinity" for unlimited attemps.
         reconnectTimeout: 10000, // total time to try reconnect in ms. 1000 = 1sec
     },
