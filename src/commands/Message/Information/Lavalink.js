@@ -1,4 +1,4 @@
-const { EmbedBuilder } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "lavalink",
@@ -9,11 +9,8 @@ module.exports = {
     run: async (client, message) => {
         const nodes = client.poru.leastUsedNodes;
 
-        const embed = new EmbedBuilder()
-            .setAuthor({
-                name: `${client.user.username} Node Info!`,
-                iconURL: message.guild.iconURL({ dynamic: true }),
-            })
+        const embed = new MessageEmbed()
+            .setAuthor(`${client.user.username} Node Info!`, message.guild.iconURL({ dynamic: true }))
             .setColor(client.color)
             .setTimestamp(Date.now());
 
